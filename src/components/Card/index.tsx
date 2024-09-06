@@ -49,7 +49,7 @@ export function Card({ coffee }: Props) {
   }
 
   useEffect(() => {
-    let timeout: number
+    let timeout: NodeJS.Timeout
 
     if (isItemAdded) {
       timeout = setTimeout(() => {
@@ -62,7 +62,7 @@ export function Card({ coffee }: Props) {
         clearTimeout(timeout)
       }
     }
-  }, [isItemAdded]) 
+  }, [isItemAdded])
   return (
     <Container>
       <CoffeeImg src={coffee.image} alt={coffee.title} />
