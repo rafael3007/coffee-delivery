@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { addons } from '../../styles/themes/addons'
-
-
+ 
 
 export const Container = styled.header`
   max-width: 1160px;
