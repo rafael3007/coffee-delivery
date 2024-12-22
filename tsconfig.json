@@ -1,7 +1,11 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "module": "es2020",  // ou "es2022", "esnext", "node16", "nodenext"
+    "target": "es2020",   // ou "esnext" (opcional, mas recomendado para novos recursos)
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react-jsx",  // Caso esteja usando JSX com React
+    "skipLibCheck": true,
+    "strict": true
+  }
 }

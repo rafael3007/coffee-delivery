@@ -14,16 +14,10 @@ import {
   Tags,
   Title,
 } from './styles'
+import type { Coffee } from '../../@types/coffee'
 
 type Props = {
-  coffee: {
-    id: string
-    title: string
-    description: string
-    tags: string[]
-    price: number
-    image: string
-  }
+  coffee: Coffee
 }
 
 export function Card({ coffee }: Props) {
@@ -68,7 +62,7 @@ export function Card({ coffee }: Props) {
       <CoffeeImg src={coffee.image} alt={coffee.title} />
 
       <Tags>
-        {coffee.tags.map((tag) => (
+        {coffee.tags.map((tag:string) => (
           <span key={tag}>{tag}</span>
         ))}
       </Tags>

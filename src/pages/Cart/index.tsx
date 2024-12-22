@@ -11,8 +11,6 @@ import {
     Trash,
 } from '@phosphor-icons/react'
 
-import { coffees } from '../../../data.json'
-
 import { QuantityInput } from '../../components/Form/QuantityInput'
 import { TextInput } from '../../components/Form/TextInput'
 import { Radio } from '../../components/Form/Radio'
@@ -33,6 +31,8 @@ import {
     PaymentOptions,
 } from './styles'
 import { useCart } from '../../hooks/useCart'
+import type { Coffee as CoffeType } from '../../@types/coffee'
+import { coffees } from '../Home'
 
 type FormInputs = {
     cep: number
@@ -72,7 +72,7 @@ export function Cart() {
     } = useCart()
 
     const coffeesInCart = cart.map((item) => {
-        const coffeeInfo = coffees.find((coffee) => coffee.id === item.id)
+        const coffeeInfo = coffees.find((coffee: CoffeType) => coffee.id === item.id)
 
         if (!coffeeInfo) {
             throw new Error('Invalid coffee.')
